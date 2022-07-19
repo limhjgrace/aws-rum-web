@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/aws-observability/aws-rum-web/compare/v1.2.1...v1.7.0) (2022-07-19)
+
+
+### Features
+
+* Add registerDomEvents command ([#111](https://github.com/aws-observability/aws-rum-web/issues/111)) ([2a67daa](https://github.com/aws-observability/aws-rum-web/commit/2a67daafd889a6eda6186c38d3d930eba816d13c))
+* Capture SPA route change timing ([#134](https://github.com/aws-observability/aws-rum-web/issues/134)) ([91e1303](https://github.com/aws-observability/aws-rum-web/commit/91e13034ab1682ec621970bd9b76e693ea928da3))
+* Dynamically update DOM event listeners ([#112](https://github.com/aws-observability/aws-rum-web/issues/112)) ([d4bfbb5](https://github.com/aws-observability/aws-rum-web/commit/d4bfbb5733e749bad5e6a2590f3d3fb2f43032c5))
+* Ignore errors ([#164](https://github.com/aws-observability/aws-rum-web/issues/164)) ([75dee61](https://github.com/aws-observability/aws-rum-web/commit/75dee618b95f2454f95ab50a43839feba98993b4))
+* Page tagging ([#114](https://github.com/aws-observability/aws-rum-web/issues/114)) ([cb9cb13](https://github.com/aws-observability/aws-rum-web/commit/cb9cb1396a22b440ee7b62a0a02c30db54ff453f))
+* Retry fetch requests and disable dispatch on failure. ([#174](https://github.com/aws-observability/aws-rum-web/issues/174)) ([587929c](https://github.com/aws-observability/aws-rum-web/commit/587929c2b801e3a01e2a79d78d1fc41bc0133722))
+* Use data plane endpoint path prefix. ([#156](https://github.com/aws-observability/aws-rum-web/issues/156)) ([3dd112f](https://github.com/aws-observability/aws-rum-web/commit/3dd112fe8bce2994147f7c1f11cc44978c632ad3))
+
+
+### Bug Fixes
+
+* Add version property to http-event-schema ([#122](https://github.com/aws-observability/aws-rum-web/issues/122)) ([cf59ecb](https://github.com/aws-observability/aws-rum-web/commit/cf59ecb3e18e74e86eb5eccbcedcae8d20c1d83f))
+* Export types used in config object ([#154](https://github.com/aws-observability/aws-rum-web/issues/154)) ([9d4238b](https://github.com/aws-observability/aws-rum-web/commit/9d4238bc03a309e2dcacc997393b15d9cfe2752e))
+* Fix route change timing fetch counter decrement ([#145](https://github.com/aws-observability/aws-rum-web/issues/145)) ([c4414d9](https://github.com/aws-observability/aws-rum-web/commit/c4414d9f9e97661b59414433864cf2fbfc602874))
+* Make dynamic DOM event handlers configurable ([#129](https://github.com/aws-observability/aws-rum-web/issues/129)) ([49eecfc](https://github.com/aws-observability/aws-rum-web/commit/49eecfc40879913260c6d91781c392fbe5921dcc))
+* Parse unhandledrejection error objects ([#123](https://github.com/aws-observability/aws-rum-web/issues/123)) ([f69c859](https://github.com/aws-observability/aws-rum-web/commit/f69c85919b8cc7f0f33418dc20455df4e4f42f9b))
+* Remove duplicate PageIdFormat type in orchestration ([#162](https://github.com/aws-observability/aws-rum-web/issues/162)) ([6cec9da](https://github.com/aws-observability/aws-rum-web/commit/6cec9da3b6308bcec4f6e2adc613824401549625))
+
 ## [1.6.0](https://github.com/aws-observability/aws-rum-web/compare/v1.5.1...v1.6.0) (2022-06-09)
 
 
