@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.18.0](https://github.com/aws-observability/aws-rum-web/compare/v1.17.0...v1.18.0) (2024-05-29)
+
+
+### Features
+
+* keep alive when dispatch fails ([#524](https://github.com/aws-observability/aws-rum-web/issues/524)) ([87e4cb4](https://github.com/aws-observability/aws-rum-web/commit/87e4cb4eee9810823de0458a4c8c6158a1732c08))
+* keep alive when dispatch fails with 401 ([#551](https://github.com/aws-observability/aws-rum-web/issues/551)) ([b9823bd](https://github.com/aws-observability/aws-rum-web/commit/b9823bd8e7ffe31f95d011abfa417183abeb2f89))
+* keep earliest event when cache is full ([#537](https://github.com/aws-observability/aws-rum-web/issues/537)) ([339ab09](https://github.com/aws-observability/aws-rum-web/commit/339ab09c9e365fb0db6917a36ed4b5fb80d7183d))
+* limit retries to 5xx and 429 ([#500](https://github.com/aws-observability/aws-rum-web/issues/500)) ([df90602](https://github.com/aws-observability/aws-rum-web/commit/df906023e81bfcd53c7b7e26abd4af531af353de))
+* retry with exponential backoff ([#501](https://github.com/aws-observability/aws-rum-web/issues/501)) ([59904c8](https://github.com/aws-observability/aws-rum-web/commit/59904c8e00b2827e127a0a041908e152222a73cc))
+
+
+### Bug Fixes
+
+* Allow title override in page attributes ([#508](https://github.com/aws-observability/aws-rum-web/issues/508)) ([a6a1ad8](https://github.com/aws-observability/aws-rum-web/commit/a6a1ad833b274627a59e001bed1f19172e63c0d5))
+* record resources with invalid names ([#532](https://github.com/aws-observability/aws-rum-web/issues/532)) ([1da86e7](https://github.com/aws-observability/aws-rum-web/commit/1da86e7b42aa9545f623a5d55ca7859481b81e54))
+
 ## [1.17.0]((https://github.com/aws-observability/aws-rum-web/compare/v1.16.0...v1.17.0)) (2024-02-01)
 
 
