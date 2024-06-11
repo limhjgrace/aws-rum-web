@@ -81,6 +81,7 @@ jobs:
               env:
                   URL: ${{ secrets.SMOKE_URL }}
                   MONITOR: ${{ secrets.SMOKE_MONITOR }}
+                  MONITOR_2: ${{ secrets.SMOKE_MONITOR_2 }}
                   ENDPOINT: ${{ secrets.SMOKE_ENDPOINT }}
                   NAME: ${{ secrets.SMOKE_MONITOR_NAME }}
               run: npm run smoke:headless
