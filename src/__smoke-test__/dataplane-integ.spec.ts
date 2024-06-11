@@ -14,7 +14,7 @@ import {
 // Environment variables set through CLI command
 const ENDPOINT = process.env.ENDPOINT;
 const MONITOR_ID = process.env.MONITOR;
-const MONITOR_ID_2 = process.env.MONITOR_2;
+const MONITOR_ID_2 = process.env.MONITOR_ID_2;
 const TEST_URL = getUrl(
     process.env.URL,
     process.env.VERSION,
