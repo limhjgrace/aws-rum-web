@@ -7,7 +7,7 @@ ENDPOINT=$5
 CDN=$6
 MONITOR_ID_2=$7
 GUEST_ARN_2=$8
-IDENTITY_POOL=$9
+IDENTITY_POOL_2=$9
 VERSION=$(npm pkg get version | sed 's/"//g')/cwr.js
 CDN+=${VERSION}
 
