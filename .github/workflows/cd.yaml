@@ -74,7 +74,7 @@ jobs:
               id: update-smoke-test-gamma-cdn
               run: |
                   chmod u+x .github/scripts/update_smoke_test.sh
-                  .github/scripts/update_smoke_test.sh ${{ secrets.SMOKE_MONITOR }} ${{ secrets.SMOKE_REGION }} ${{ secrets.SMOKE_ARN }} ${{ secrets.SMOKE_IDENTITY }} ${{ secrets.CONFIG_ENDPOINT }} ${{ secrets.CDN_GAMMA }}
+                  .github/scripts/update_smoke_test.sh ${{ secrets.SMOKE_MONITOR }} ${{ secrets.SMOKE_REGION }} ${{ secrets.SMOKE_ARN }} ${{ secrets.SMOKE_IDENTITY }} ${{ secrets.CONFIG_ENDPOINT }} ${{ secrets.CDN_GAMMA }} ${{ secrets.SMOKE_MONITOR_2 }} ${{ secrets.SMOKE_ARN_2 }} ${{ secrets.SMOKE_IDENTITY_2 }}
 
             - name: Build Smoke Test Application - NPM/ES
               id: build-npm-es-application-pre-release
@@ -168,7 +168,7 @@ jobs:
               id: update-smoke-test-prod-cdn
               run: |
                   chmod u+x .github/scripts/update_smoke_test.sh
-                  .github/scripts/update_smoke_test.sh ${{ secrets.SMOKE_MONITOR }} ${{ secrets.SMOKE_REGION }} ${{ secrets.SMOKE_ARN }} ${{ secrets.SMOKE_IDENTITY }} ${{ secrets.CONFIG_ENDPOINT }} ${{ secrets.CDN }}
+                  .github/scripts/update_smoke_test.sh ${{ secrets.SMOKE_MONITOR }} ${{ secrets.SMOKE_REGION }} ${{ secrets.SMOKE_ARN }} ${{ secrets.SMOKE_IDENTITY }} ${{ secrets.CONFIG_ENDPOINT }} ${{ secrets.CDN }} ${{ secrets.SMOKE_MONITOR_2 }} ${{ secrets.SMOKE_ARN_2 }} ${{ secrets.SMOKE_IDENTITY_2 }}
 
             - name: Upload Prod Smoke Tests to CloudFront
               id: upload-smoke-test-prod

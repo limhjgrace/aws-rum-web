@@ -66,7 +66,7 @@ jobs:
               id: update-smoke-test
               run: |
                   chmod u+x .github/scripts/update_smoke_test.sh
-                  .github/scripts/update_smoke_test.sh ${{ secrets.SMOKE_MONITOR }} ${{ secrets.SMOKE_REGION }} ${{ secrets.SMOKE_ARN }} ${{ secrets.SMOKE_IDENTITY }} ${{ secrets.CONFIG_ENDPOINT }} ${{ secrets.CDN }} >> processed_smoke.html
+                  .github/scripts/update_smoke_test.sh ${{ secrets.SMOKE_MONITOR }} ${{ secrets.SMOKE_REGION }} ${{ secrets.SMOKE_ARN }} ${{ secrets.SMOKE_IDENTITY }} ${{ secrets.CONFIG_ENDPOINT }} ${{ secrets.CDN }} ${{ secrets.SMOKE_MONITOR_2 }} ${{ secrets.SMOKE_ARN_2 }} ${{ secrets.SMOKE_IDENTITY_2 }} >> processed_smoke.html
 
             - name: Upload Smoke Test to CloudFront
               id: upload-smoke-test

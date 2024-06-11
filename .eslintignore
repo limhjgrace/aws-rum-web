@@ -1,1 +1,2 @@
 src/events/*
+**/src/loader-npm-rum.ts
