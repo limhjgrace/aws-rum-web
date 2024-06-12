@@ -1,5 +1,6 @@
 // @ts-nocheck
 const { AwsRum, AwsRumConfig } = require('aws-rum-web');
+const { delay } = require('../../utils');
 
 let awsRum;
 let awsRum2;
@@ -31,6 +32,9 @@ try {
     console.log(error);
     throw error;
 }
+
+// add wait time to ensure credentials are retrieved separately
+await delay(10000);
 
 try {
     const config: AwsRumConfig = {

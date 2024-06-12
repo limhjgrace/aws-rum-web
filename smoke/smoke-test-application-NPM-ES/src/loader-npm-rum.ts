@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { AwsRum, AwsRumConfig } from 'aws-rum-web';
+import { delay } from '../../utils';
 let awsRum;
 let awsRum2;
 
@@ -30,6 +31,9 @@ try {
     console.log(error);
     throw error;
 }
+
+// add wait time to ensure credentials are retrieved separately
+await delay(10000);
 
 try {
     const config: AwsRumConfig = {
