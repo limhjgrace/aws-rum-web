@@ -1,5 +1,7 @@
 // @ts-nocheck
 import { AwsRum, AwsRumConfig } from 'aws-rum-web';
+import { wait } from '../../util';
+
 let awsRum;
 let awsRum2;
 
@@ -32,7 +34,7 @@ try {
 }
 
 // add wait time to ensure credentials are retrieved separately
-await new Promise((resolve) => setTimeout(resolve, 10000));
+await wait(10000);
 
 try {
     const config: AwsRumConfig = {
