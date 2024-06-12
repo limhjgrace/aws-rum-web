@@ -1,6 +1,6 @@
 // @ts-nocheck
 const { AwsRum, AwsRumConfig } = require('aws-rum-web');
-const { wait } = require('../../util');
+const { wait } = require('../../utils');
 
 let awsRum;
 let awsRum2;

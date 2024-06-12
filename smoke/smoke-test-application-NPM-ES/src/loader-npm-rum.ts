@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { AwsRum, AwsRumConfig } from 'aws-rum-web';
-import { wait } from '../../util';
+import { wait } from '../../utils';
 
 let awsRum;
 let awsRum2;
