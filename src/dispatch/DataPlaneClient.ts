@@ -1,8 +1,8 @@
 import { toHex } from '@aws-sdk/util-hex-encoding';
 import { SignatureV4 } from '@aws-sdk/signature-v4';
 import {
-    CredentialProvider,
-    Credentials,
+    AwsCredentialIdentityProvider,
+    AwsCredentialIdentity,
     HttpResponse,
     RequestPresigningArguments
 } from '@aws-sdk/types';
@@ -35,6 +35,7 @@ declare type SerializedPutRumEventsRequest = {
     AppMonitorDetails: AppMonitorDetails;
     UserDetails: UserDetails;
     RumEvents: SerializedRumEvent[];
+    Alias?: string;
 };
 
 export declare type DataPlaneClientConfig = {
@@ -42,7 +43,10 @@ export declare type DataPlaneClientConfig = {
     beaconRequestHandler: HttpHandler;
     endpoint: URL;
     region: string;
-    credentials: CredentialProvider | Credentials | undefined;
+    credentials:
+        | AwsCredentialIdentityProvider
+        | AwsCredentialIdentity
+        | undefined;
 };
 
 export class DataPlaneClient {
@@ -111,6 +115,7 @@ export class DataPlaneClient {
         const options = {
             method: METHOD,
             protocol: this.config.endpoint.protocol,
+            port: Number(this.config.endpoint.port) || undefined,
             headers: {
                 'content-type': contentType,
                 host: this.config.endpoint.host
@@ -144,12 +149,15 @@ const serializeRequest = (
     request.RumEvents.forEach((e) =>
         serializedRumEvents.push(serializeEvent(e))
     );
-    const serializedRequest: SerializedPutRumEventsRequest = {
+    let serializedRequest: SerializedPutRumEventsRequest = {
         BatchId: request.BatchId,
         AppMonitorDetails: request.AppMonitorDetails,
         UserDetails: request.UserDetails,
         RumEvents: serializedRumEvents
     };
+    if (request.Alias) {
+        serializedRequest = { ...serializedRequest, Alias: request.Alias };
+    }
     return serializedRequest;
 };
 
