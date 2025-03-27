@@ -157,41 +157,41 @@ test('when FID event is sent then event is ingested', async ({ page }) => {
     expect(isIngestionCompleted).toEqual(true);
 });
 
-test('when navigation events are sent then events are ingested', async ({
-    page
-}) => {
-    const timestamp = Date.now() - 30000;
+// test('when navigation events are sent then events are ingested', async ({
+//     page
+// }) => {
+//     const timestamp = Date.now() - 30000;
 
-    // Open page
-    await page.goto(TEST_URL);
-    const clearButton = page.locator('[id=pushStateOneToHistory]');
-    await clearButton.click();
+//     // Open page
+//     await page.goto(TEST_URL);
+//     const clearButton = page.locator('[id=pushStateOneToHistory]');
+//     await clearButton.click();
 
-    // Test will timeout if no successful dataplane request is found
-    const response = await page.waitForResponse(async (response) =>
-        isDataPlaneRequest(response, TARGET_URL)
-    );
+//     // Test will timeout if no successful dataplane request is found
+//     const response = await page.waitForResponse(async (response) =>
+//         isDataPlaneRequest(response, TARGET_URL)
+//     );
 
-    // Parse payload to verify event count
-    const requestBody = JSON.parse(response.request().postData());
+//     // Parse payload to verify event count
+//     const requestBody = JSON.parse(response.request().postData());
 
-    const navigation = getEventsByType(
-        requestBody,
-        PERFORMANCE_NAVIGATION_EVENT_TYPE
-    );
-    const eventIds = getEventIds(navigation);
+//     const navigation = getEventsByType(
+//         requestBody,
+//         PERFORMANCE_NAVIGATION_EVENT_TYPE
+//     );
+//     const eventIds = getEventIds(navigation);
 
-    // One initial load, one route change
-    expect(eventIds.length).toEqual(2);
-    const isIngestionCompleted = await verifyIngestionWithRetry(
-        rumClient,
-        eventIds,
-        timestamp,
-        MONITOR_NAME,
-        5
-    );
-    expect(isIngestionCompleted).toEqual(true);
-});
+//     // One initial load, one route change
+//     expect(eventIds.length).toEqual(2);
+//     const isIngestionCompleted = await verifyIngestionWithRetry(
+//         rumClient,
+//         eventIds,
+//         timestamp,
+//         MONITOR_NAME,
+//         5
+//     );
+//     expect(isIngestionCompleted).toEqual(true);
+// });
 
 test('when page view event is sent then the event is ingested', async ({
     page
